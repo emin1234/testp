@@ -4,7 +4,11 @@ var customer = require('../DB/db');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  //res.render('index', { title: 'Express' });
+  customer.allCustomers((all)=>{
+    res.send(all);
+  })
+
 });
 
 router.post('/', function(req, res, next) {

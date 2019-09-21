@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var custome = require('../DB/db');
+var customer = require('../DB/db');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

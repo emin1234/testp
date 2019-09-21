@@ -14,7 +14,24 @@ var insertCustomer = async (val,f)=>{
 
 }
 
+var allCustomers = function(regFunction){
+
+    db.Customers.findAll().then(rows => {
+        var all = [];
+        rows.forEach(function (row) {
+            let customer = {
+                id: row.dataValues.id,
+                name: row.dataValues.name
+            };
+            all.push(customer);
+        });
+    })
+}
+
+
+
 
 module.exports = {
-    insertCustomer
+    insertCustomer,
+    allCustomers
 };

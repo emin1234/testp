@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var custome = require('../DB/db');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -7,7 +8,13 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  console.log("porukaa");
+
+  var customer = {
+    name: req.body.name,
+  };
+  customer.insertCustomer(customer,function(){
+    res.send('inserted');
+  });
 });
 
 

@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 
-var entity = require('./Model/entity');
+var entity = require('../Model/entity');
 entity.createTable();
 
 
